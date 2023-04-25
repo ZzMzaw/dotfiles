@@ -1,0 +1,13 @@
+= dotfiles
+
+This repository contains most of configuration files I use for Fedora qubes.
+
+== alacritty
+
+== zellij
+
+== nushell
+
+== starship
+
+

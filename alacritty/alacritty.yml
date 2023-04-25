@@ -1,0 +1,31 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+
+# Any unused configuration has been removed from this file, look at 
+# alacritty releases for a complete configuration file
+
+# Open alacritty fullscreen to avoid resizing issues with nushell
+window:
+  startup_mode: Fullscreen
+
+# Start zellij with nushell
+shell:
+  program: /usr/bin/zellij
+  args:
+    - options
+    - --default-shell
+    - nu
+
+# Mouse bindings
+mouse_bindings:
+ - { mouse: Right,                 action: ExpandSelection }
+ - { mouse: Middle, mode: ~Vi,     action: PasteSelection  }
+
+# Key bindings
+key_bindings:
+  # Maps Ctrl+Space to F2 to be used by zellij
+  - { key: Space,     mods: Control,                    chars: "\x1b\x4f\x51" }
+  # Maps Super+V to paste from clipboard because Ctrl+Shift+V is already used by QubesOS
+  - { key: V,              mods: Super        , mode: ~Vi,        action: Paste            }
+  # Maps Super+C to copy to clipboard because Ctrl+Shift+C is already used by QubesOS
+  - { key: C,              mods: Super        ,                   action: Copy             }
+
